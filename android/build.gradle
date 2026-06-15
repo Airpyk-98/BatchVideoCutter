@@ -32,6 +32,14 @@ allprojects {
                 }
             }
         }
+        exclusiveContent {
+            filter {
+                includeGroup "io.github.maitrungduc1410"
+            }
+            forRepository {
+                mavenCentral()
+            }
+        }
     }
     configurations.all {
         resolutionStrategy.dependencySubstitution {

@@ -19,3 +19,12 @@ buildscript {
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+allprojects {
+    configurations.all {
+        resolutionStrategy.dependencySubstitution {
+            substitute module("com.arthenica:ffmpeg-kit-https:6.0-2") using module("io.github.maitrungduc1410:ffmpeg-kit-https:6.0-2")
+            substitute module("com.arthenica:smart-exception-java:0.2.1") using module("io.github.maitrungduc1410:smart-exception-java:0.2.1")
+        }
+    }
+}

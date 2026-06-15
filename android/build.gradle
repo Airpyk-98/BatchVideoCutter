@@ -22,7 +22,16 @@ apply plugin: "com.facebook.react.rootproject"
 
 allprojects {
     repositories {
-        maven { url "$rootDir/../node_modules/@notifee/react-native/android/libs" }
+        exclusiveContent {
+            filter {
+                includeGroup "app.notifee"
+            }
+            forRepository {
+                maven {
+                    url "$rootDir/../node_modules/@notifee/react-native/android/libs"
+                }
+            }
+        }
     }
     configurations.all {
         resolutionStrategy.dependencySubstitution {
